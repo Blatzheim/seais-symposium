@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SEAIS 2026 — Special Symposium on Software Engineering and AI</title>
+<title>SEAIS 2026 — Special Symposium on Software Engineering and AI (SEAIS)</title>
 <meta name="description" content="Special Symposium on Software Engineering and AI (SEAIS), June 30 – July 2, 2026, Hasso Plattner Institute, Potsdam, Germany.">
 <meta property="og:title" content="SEAIS 2026 — Special Symposium on Software Engineering and AI">
 <meta property="og:description" content="June 30 – July 2, 2026 · Hasso Plattner Institute, Potsdam, Germany. Keynotes, statements, posters, and discussion on the state of the art in (human-centered) software engineering and AI.">
@@ -100,14 +100,20 @@
   h1 {
     font-size: clamp(2.1rem, 5.5vw, 3.6rem);
     line-height: 1.08; font-weight: 800; letter-spacing: -0.02em;
-    max-width: 17ch;
+    max-width: 19ch;
   }
-  .hero-sub {
-    margin-top: 1.4rem; font-size: clamp(1rem, 2vw, 1.15rem);
-    color: rgba(255,255,255,0.92); max-width: 40rem; font-weight: 300;
+  .h1-pre {
+    display: flex; align-items: center; gap: 0.8rem;
+    font-size: clamp(0.8rem, 1.5vw, 1rem); font-weight: 500;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: rgba(255,255,255,0.66); margin-bottom: 1rem;
   }
+  .h1-pre::before {
+    content: ""; width: 2rem; height: 2px; background: var(--orange); flex: none;
+  }
+  .h1-abbr { font-weight: 300; color: rgba(255,255,255,0.55); letter-spacing: 0; }
   .hero-meta {
-    margin-top: 2rem; display: flex; flex-wrap: wrap; gap: 0.75rem 2rem;
+    margin-top: 1.8rem; display: flex; flex-wrap: wrap; gap: 0.75rem 2rem;
     font-family: var(--mono); font-size: 0.88rem;
   }
   .hero-meta span { display: flex; align-items: center; gap: 0.5rem; }
@@ -244,7 +250,7 @@
     header.hero { background: #fff; color: #000; }
     header.hero::after { display: none; }
     .hero-inner { padding-top: 1rem; padding-bottom: 1rem; }
-    .hero-sub, .hero-meta { color: #000; }
+    .hero-meta { color: #000; }
     section { padding: 1.5rem 0; }
     section.alt { background: #fff; }
     .slot { break-inside: avoid; }
@@ -271,8 +277,7 @@
 <header class="hero" id="top">
   <div class="hero-img" aria-hidden="true"></div>
   <div class="wrap hero-inner">
-    <h1>Software Engineering and&nbsp;AI</h1>
-    <p class="hero-sub">A special symposium on the state of the art in human-centered software engineering and AI — keynotes, statements, posters, and discussion across three days in Potsdam.</p>
+    <h1><span class="h1-pre">Special Symposium on</span>Software Engineering and&nbsp;AI (SEAIS)</h1>
     <div class="hero-meta">
       <span><span class="dot" aria-hidden="true"></span>June 30 – July 2, 2026</span>
       <span><span class="dot" aria-hidden="true"></span>Hasso Plattner Institute, Potsdam</span>
@@ -328,7 +333,7 @@
     <!-- Day 1 -->
     <div class="day">
       <div class="day-head"><span class="d-num">DAY 1</span><h3>Tuesday, June 30</h3></div>
-      <div class="slot"><div class="time">10:00 – 12:30</div><div class="what"><strong>Arrival, welcome and networking sessions</strong> at the SE&amp;AI chair</div></div>
+      <div class="slot"><div class="time">10:00 – 12:30</div><div class="what"><strong>Arrival, welcome and networking sessions</strong> at the SE&amp;AI chair<span class="room">House O2</span></div></div>
       <div class="slot"><div class="time">12:30 – 14:00</div><div class="what"><strong>Registration and lunch</strong><span class="room">Event Space</span></div></div>
       <div class="slot kn"><div class="time">14:00 – 15:10</div><div class="what"><strong>Opening &amp; keynotes: Snapshot from practice (and beyond)</strong><span class="room">L-E.03</span><div class="detail">Rebecca Engelhardt (KPMG) · Markus Borg (CodeScene &amp; Lund University)</div></div></div>
       <div class="slot"><div class="time">15:10 – 15:30</div><div class="what"><strong>Pecha Kucha statements</strong><span class="room">L-E.03</span></div></div>
