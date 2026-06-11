@@ -1,14 +1,54 @@
 # SEAIS 2026 — Symposium Website
 
-Static one-pager. No build step, no dependencies (fonts via Google Fonts CDN).
+Website of the **Special Symposium on Software Engineering and AI (SEAIS)**,
+June 30 – July 2, 2026, Hasso Plattner Institute (HPI), Potsdam, Germany.
 
-## Deploy on GitHub Pages
-1. Create a repository (e.g. `seais-2026`).
-2. Push `index.html` and `assets/` to the `main` branch root.
-3. Repository Settings → Pages → Source: "Deploy from a branch", branch `main`, folder `/ (root)`.
-4. Site is served at `https://<org-or-user>.github.io/seais-2026/`.
+Hosted by the [Chair for Software Engineering and AI](https://hpi.de/en/research/research-groups/software-engineering-and-ai/) at HPI.
 
-## Notes
-- The Google Maps widget is an iframe embed (no API key required).
-- Speaker affiliations and session chairs marked as preliminary follow the current program draft.
-- Images: `assets/hero-hpi.jpg` (HPI press photo), `assets/campus-map.jpg`, `assets/entrance-haus-l.jpg`.
+## Structure
+
+A single static page, no build step, no JavaScript, no dependencies beyond
+fonts loaded from the Google Fonts CDN (Inter, IBM Plex Mono).
+
+```
+index.html          Entire site (markup + embedded CSS)
+assets/
+  hero-hpi.jpg      Header photo (Photo: HPI)
+  campus-map.jpg    Annotated campus map with routes to the SEAIS entrance
+```
+
+## Editing
+
+All content lives in `index.html`:
+
+- **Program** — `<section id="program">`. Each row is a `div.slot`;
+  `slot kn` marks keynotes/panels (red), `span.room` renders the room tag.
+- **Speakers** — `<section id="speakers">`, one `div.speaker` per person.
+- **Venue** — `<section id="venue">`. The Google Maps iframe is pinned to
+  coordinates `52.392667, 13.124833` (entrance at Haus L); the
+  "Open in Google Maps" link uses the shared location link.
+- **Colors/typography** — CSS custom properties at the top of the
+  `<style>` block (palette derived from the HPI corporate design).
+
+The page is responsive (down to ~360 px) and includes a print stylesheet,
+so the program can be printed directly from the browser.
+
+## Deployment (GitHub Pages)
+
+1. Push `index.html` and `assets/` to the `main` branch root.
+2. Repository Settings → Pages → Source: "Deploy from a branch",
+   branch `main`, folder `/ (root)`.
+3. The site is served at `https://<org-or-user>.github.io/<repo>/`.
+
+Any other static host (institute web space, Netlify, etc.) works the same
+way — copy the two items above to the document root.
+
+## Contact
+
+- General inquiries: ali.ebrahimi.pourasad@uni-hamburg.de
+- Slides & posters: mustafa.ghani@hpi.de
+
+## Image credits
+
+Photos and map material: Hasso Plattner Institute (HPI). Not licensed for
+reuse outside this site.
