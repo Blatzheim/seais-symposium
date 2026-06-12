@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SEAIS 2026 — Special Symposium on Software Engineering and AI (SEAIS)</title>
+<title>SEAIS 2026 — Special Symposium on Software Engineering and AI</title>
 <meta name="description" content="Special Symposium on Software Engineering and AI (SEAIS), June 30 – July 2, 2026, Hasso Plattner Institute, Potsdam, Germany.">
 <meta property="og:title" content="SEAIS 2026 — Special Symposium on Software Engineering and AI">
 <meta property="og:description" content="June 30 – July 2, 2026 · Hasso Plattner Institute, Potsdam, Germany. Keynotes, statements, posters, and discussion on the state of the art in (human-centered) software engineering and AI.">
@@ -89,7 +89,7 @@
   }
   .hero-img {
     position: absolute; inset: 0;
-    background: url("assets/hero-hpi.jpg") center 65% / cover no-repeat;
+    background: url("assets/hero-house-o.png") center 65% / cover no-repeat;
     filter: saturate(0.9);
   }
   .hero-img::after {
@@ -149,23 +149,46 @@
   }
   .prose { max-width: 46rem; color: #33373b; }
   .prose p + p { margin-top: 1rem; }
+  .venue-program-note {
+    font-size: 0.95rem;
+    color: var(--grey);
+  }
 
   /* ---------- Speakers ---------- */
   .speaker-grid {
     display: grid;
     border-top: 1px solid var(--line); border-left: 1px solid var(--line);
-    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
     margin-top: 2rem;
   }
   .speaker {
-    background: var(--paper); padding: 1.1rem 1.2rem 1.2rem;
+    display: flex; align-items: center; gap: 1.35rem;
+    background: var(--paper); padding: 1.55rem 1.65rem;
+    min-height: 8.4rem;
     border-right: 1px solid var(--line); border-bottom: 1px solid var(--line);
     border-top: 3px solid transparent;
-    transition: border-top-color 0.15s ease;
+    color: inherit; transition: border-top-color 0.15s ease, background 0.15s ease;
   }
-  .speaker:hover { border-top-color: var(--red); }
-  .speaker .name { font-weight: 700; font-size: 0.98rem; line-height: 1.3; }
-  .speaker .aff { color: var(--grey); font-size: 0.84rem; margin-top: 0.25rem; }
+  a.speaker:hover { border-top-color: var(--red); background: #fbf7f4; text-decoration: none; }
+  a.speaker:hover .name { color: var(--red); }
+  .speaker .avatar {
+    position: relative;
+    width: 6rem; height: 6rem; flex: none; border-radius: 50%;
+    background: var(--paper-alt); overflow: hidden; color: #b4b1ab;
+  }
+  .speaker .avatar svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .speaker .avatar img {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    object-fit: cover; display: block; background: var(--paper-alt);
+  }
+  .speaker .meta { min-width: 0; display: flex; flex-direction: column; }
+  .speaker .name { font-weight: 700; font-size: 1.12rem; line-height: 1.25; transition: color 0.15s ease; }
+  .speaker .aff { color: var(--grey); font-size: 0.94rem; margin-top: 0.2rem; }
+  @media (max-width: 420px) {
+    .speaker-grid { grid-template-columns: 1fr; }
+    .speaker { padding: 1.15rem 1rem; gap: 1rem; min-height: 6.5rem; }
+    .speaker .avatar { width: 4.6rem; height: 4.6rem; }
+  }
   .note { font-size: 0.85rem; color: var(--grey); margin-top: 0.8rem; }
 
   /* ---------- Program ---------- */
@@ -225,6 +248,17 @@
   }
   .map-sub a, .map-sub span { display: block; }
   .map-sub span { margin-top: 0.15rem; }
+  .addr-card {
+    display: inline-flex; flex-direction: column; gap: 0.15rem;
+    margin-top: 1.4rem; padding: 1rem 1.4rem;
+    background: var(--paper-alt); border-left: 4px solid var(--red);
+  }
+  .addr-card .addr-label {
+    font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--grey);
+  }
+  .addr-card .addr-text { font-weight: 600; font-size: 0.95rem; }
+  .addr-card a { font-size: 0.85rem; margin-top: 0.25rem; }
 
   /* ---------- Contact / footer ---------- */
   .contact-grid {
@@ -234,9 +268,14 @@
   .contact-card {
     border: 1px solid var(--line); padding: 1.3rem 1.4rem; background: var(--paper);
   }
-  .contact-card .role { font-family: var(--mono); font-size: 0.74rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--grey); }
-  .contact-card .who { font-weight: 700; margin-top: 0.4rem; }
-  .contact-card a { font-size: 0.9rem; word-break: break-all; }
+  .contact-card .role {
+    font-family: var(--mono); font-size: 0.74rem; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--grey);
+    padding-bottom: 0.6rem; border-bottom: 1px solid var(--line);
+  }
+  .contact-card .person { margin-top: 0.9rem; }
+  .contact-card .who { font-weight: 700; line-height: 1.3; }
+  .contact-card a { font-size: 0.86rem; word-break: normal; overflow-wrap: anywhere; }
   footer {
     background: var(--ink); color: rgba(255,255,255,0.75);
     padding: 2.2rem 0; font-size: 0.84rem;
@@ -269,7 +308,7 @@
       <a href="#speakers">Speakers</a>
       <a href="#program">Program</a>
       <a href="#venue">Venue</a>
-      <a href="#contact">Contact</a>
+      <a href="#contact">Organisers</a>
     </div>
   </div>
 </nav>
@@ -277,11 +316,11 @@
 <header class="hero" id="top">
   <div class="hero-img" aria-hidden="true"></div>
   <div class="wrap hero-inner">
-    <h1><span class="h1-pre">Special Symposium on</span>Software Engineering and&nbsp;AI (SEAIS)</h1>
+    <h1><span class="h1-pre">Special Symposium on</span>Software Engineering and&nbsp;AI <span class="h1-abbr">(SEAIS)</span></h1>
     <div class="hero-meta">
       <span><span class="dot" aria-hidden="true"></span>June 30 – July 2, 2026</span>
       <span><span class="dot" aria-hidden="true"></span>Hasso Plattner Institute, Potsdam</span>
-      <span><span class="dot" aria-hidden="true"></span>Haus L, Campus II</span>
+      <span><span class="dot" aria-hidden="true"></span>House L, Campus II</span>
     </div>
     <div class="hero-cta">
       <a class="btn btn-primary" href="#program">View program</a>
@@ -295,7 +334,7 @@
   <div class="wrap">
     <h2>About</h2>
     <div class="prose">
-      <p>SEAIS brings leading researchers in software engineering and AI together with experienced practitioners and ambitious students to reflect on the state of the art in (human-centered) software engineering and AI, and to co-shape its future.</p>
+      <p>SEAIS brings <strong>~30</strong> leading researchers in software engineering and AI together with <strong>~30</strong> experienced practitioners and <strong>~30</strong> ambitious students to reflect on the state of the art in (human-centered) software engineering and AI, and to co-shape its future.</p>
       <p>The symposium is held with the generous support of the Hasso Plattner Institute and its <a href="https://hpi.de/en/research/research-groups/software-engineering-and-ai/" rel="noopener">Chair for Software Engineering and AI</a>.</p>
     </div>
   </div>
@@ -304,25 +343,11 @@
 <section id="speakers" class="alt">
   <div class="wrap">
     <h2>Keynote speakers</h2>
-    <div class="speaker-grid">
-      <div class="speaker"><div class="name">Reem Ayad</div><div class="aff">University of Toronto</div></div>
-      <div class="speaker"><div class="name">Dr. Markus Borg</div><div class="aff">CodeScene &amp; Lund University</div></div>
-      <div class="speaker"><div class="name">Prof. Dr. Prem Devanbu</div><div class="aff">UC Davis</div></div>
-      <div class="speaker"><div class="name">Dr. Rebecca Engelhardt</div><div class="aff">KPMG</div></div>
-      <div class="speaker"><div class="name">Prof. Dr. Jin Guo</div><div class="aff">McGill University</div></div>
-      <div class="speaker"><div class="name">Prof. Dr. Ahmed E. Hassan</div><div class="aff">Huawei &amp; Queen's University</div></div>
-      <div class="speaker"><div class="name">Prof. Dr. Foutse Khomh</div><div class="aff">Polytechnique Montréal</div></div>
-      <div class="speaker"><div class="name">Prof. Dr. Simone Kühn</div><div class="aff">Max Planck Institute</div></div>
-      <div class="speaker"><div class="name">Dr. Anastasia Mavridou</div><div class="aff">NASA</div></div>
-      <div class="speaker"><div class="name">Prof. Dr. Bashar Nuseibeh</div><div class="aff"></div></div>
-      <div class="speaker"><div class="name">Christian Rahe</div><div class="aff">University of Hamburg</div></div>
-      <div class="speaker"><div class="name">Prof. Dr. Martin Robillard</div><div class="aff">McGill University</div></div>
-      <div class="speaker"><div class="name">Prof. Dr. Sergio Segura</div><div class="aff">Universidad de Sevilla</div></div>
-      <div class="speaker"><div class="name">Prof. Dr. Paola Spoletini</div><div class="aff">Kennesaw State University</div></div>
-      <div class="speaker"><div class="name">Prof. Dr. Bogdan Vasilescu</div><div class="aff">Carnegie Mellon University</div></div>
-      <div class="speaker"><div class="name">Prof. Dr. Andreas Vogelsang</div><div class="aff">University of Duisburg-Essen</div></div>
-      <div class="speaker"><div class="name">Prof. Dr. Tom Zimmermann</div><div class="aff">UC Irvine</div></div>
-    </div>
+    <!-- Speaker cards are rendered from the inline SPEAKERS array below.
+         Speaker photos are local files under assets/speakers/. If image is empty
+         or broken, the local default avatar is loaded instead. -->
+    <div class="speaker-grid" id="speaker-grid"></div>
+    <noscript><p class="note">Enable JavaScript to view the list of keynote speakers, or see the program below.</p></noscript>
   </div>
 </section>
 
@@ -333,12 +358,12 @@
     <!-- Day 1 -->
     <div class="day">
       <div class="day-head"><span class="d-num">DAY 1</span><h3>Tuesday, June 30</h3></div>
-      <div class="slot"><div class="time">10:00 – 12:30</div><div class="what"><strong>Arrival, welcome and networking sessions</strong> at the SE&amp;AI chair<span class="room">House O2</span></div></div>
-      <div class="slot"><div class="time">12:30 – 14:00</div><div class="what"><strong>Registration and lunch</strong><span class="room">Event Space</span></div></div>
-      <div class="slot kn"><div class="time">14:00 – 15:10</div><div class="what"><strong>Opening &amp; keynotes: Snapshot from practice (and beyond)</strong><span class="room">L-E.03</span><div class="detail">Rebecca Engelhardt (KPMG) · Markus Borg (CodeScene &amp; Lund University)</div></div></div>
+      <div class="slot"><div class="time">10:00 – 12:30</div><div class="what"><strong>Arrival, welcome and networking sessions</strong> at the SE&amp;AI chair <span class="room">House O2</span><div class="detail">HPI Campus II, House O2; August-Bebel-Str. 15, 14482 Potsdam<br><a href="https://maps.app.goo.gl/8Vh6BmLyQCx9YtVG7" rel="noopener">Open in Google Maps</a></div></div></div>
+      <div class="slot"><div class="time">12:30 – 14:00</div><div class="what"><strong>Registration and lunch</strong><span class="room">Event Space (House L)</span></div></div>
+      <div class="slot kn"><div class="time">14:00 – 15:10</div><div class="what"><strong>Opening &amp; keynotes: Snapshot from practice (and beyond)</strong><span class="room">L-E.03</span><div class="detail">Rebecca Engelhardt (KPMG)<br>Markus Borg (CodeScene &amp; Lund University)</div></div></div>
       <div class="slot"><div class="time">15:10 – 15:30</div><div class="what"><strong>Pecha Kucha statements</strong><span class="room">L-E.03</span></div></div>
-      <div class="slot"><div class="time">15:30 – 16:15</div><div class="what"><strong>Posters, demos, and coffee break</strong><span class="room">Event Space</span></div></div>
-      <div class="slot kn"><div class="time">16:15 – 17:30</div><div class="what"><strong>Keynotes: Development agents vs. human developers</strong><span class="room">L-E.03</span><div class="detail">Tom Zimmermann (UC Irvine) · Reem Ayad (University of Toronto)</div></div></div>
+      <div class="slot"><div class="time">15:30 – 16:15</div><div class="what"><strong>Posters, demos, and coffee break</strong><span class="room">Event Space (House L)</span></div></div>
+      <div class="slot kn"><div class="time">16:15 – 17:30</div><div class="what"><strong>Keynotes: Development agents vs. human developers</strong><span class="room">L-E.03</span><div class="detail">Tom Zimmermann (UC Irvine)<br>Reem Ayad (University of Toronto)</div></div></div>
       <div class="slot"><div class="time">17:30 – 18:30</div><div class="what"><strong>Campus tour</strong></div></div>
       <div class="slot"><div class="time">18:30 – 21:00</div><div class="what"><strong>Symposium reception for reflections</strong><span class="room">HPI Terrace</span></div></div>
     </div>
@@ -346,23 +371,23 @@
     <!-- Day 2 -->
     <div class="day">
       <div class="day-head"><span class="d-num">DAY 2</span><h3>Wednesday, July 1</h3></div>
-      <div class="slot kn"><div class="time">09:30 – 10:30</div><div class="what"><strong>Keynotes: Trustworthiness and reliability</strong><span class="room">L-E.03</span><div class="detail">Sergio Segura (Universidad de Sevilla) · Foutse Khomh (Polytechnique Montréal)</div></div></div>
+      <div class="slot kn"><div class="time">09:30 – 10:30</div><div class="what"><strong>Keynotes: Trustworthiness and reliability</strong><span class="room">L-E.03</span><div class="detail">Sergio Segura (Universidad de Sevilla)<br>Foutse Khomh (Polytechnique Montréal)</div></div></div>
       <div class="slot"><div class="time">10:30 – 11:00</div><div class="what"><strong>Pecha Kucha statements</strong><span class="room">L-E.03</span></div></div>
       <div class="slot"><div class="time">11:00 – 11:30</div><div class="what"><strong>Coffee break</strong></div></div>
-      <div class="slot kn"><div class="time">11:30 – 12:15</div><div class="what"><strong>Keynotes: It's all about the requirements</strong><span class="room">L-E.03</span><div class="detail">Anastasia Mavridou (NASA) · Andreas Vogelsang (University of Duisburg-Essen)</div></div></div>
-      <div class="slot kn"><div class="time">12:15 – 13:00</div><div class="what"><strong>Panel: Industry challenges and needs</strong><span class="room">L-E.03</span><div class="detail">Ahmed E. Hassan (Huawei &amp; Queen's University) · Clara Lüders · Tobias Schimmer (SAP) · Lars Schwabe (LHIND)</div></div></div>
+      <div class="slot kn"><div class="time">11:30 – 12:15</div><div class="what"><strong>Keynotes: It's all about the requirements</strong><span class="room">L-E.03</span><div class="detail">Anastasia Mavridou (NASA)<br>Andreas Vogelsang (University of Duisburg-Essen)</div></div></div>
+      <div class="slot kn"><div class="time">12:15 – 13:00</div><div class="what"><strong>Panel: Industry challenges and needs</strong><span class="room">L-E.03</span><div class="detail">Ahmed E. Hassan (Huawei &amp; Queen's University)<br>Clara Lüders<br>Tobias Schimmer (SAP)<br>Lars Schwabe (LHIND)</div></div></div>
       <div class="slot"><div class="time">13:00 – 14:30</div><div class="what"><strong>Lunch, posters, and group picture</strong></div></div>
-      <div class="slot kn"><div class="time">14:30 – 15:30</div><div class="what"><strong>Keynotes: Productivity and cognition</strong><span class="room">L-E.03</span><div class="detail">Simone Kühn (Max Planck Institute) · Bogdan Vasilescu (Carnegie Mellon University)</div></div></div>
+      <div class="slot kn"><div class="time">14:30 – 15:30</div><div class="what"><strong>Keynotes: Productivity and cognition</strong><span class="room">L-E.03</span><div class="detail">Simone Kühn (Max Planck Institute)<br>Bogdan Vasilescu (Carnegie Mellon University)</div></div></div>
       <div class="slot"><div class="time">16:00</div><div class="what"><strong>Walk to the quay</strong></div></div>
       <div class="slot"><div class="time">16:30 – 18:30</div><div class="what"><strong>Networking on the boat</strong><div class="detail">Departing 16:30 at Griebnitzsee</div></div></div>
-      <div class="slot"><div class="time">18:30 – 21:00</div><div class="what"><strong>Symposium banquet</strong> with a special talk about the "magic" of SE and its community<span class="room">El Puerto</span></div></div>
+      <div class="slot"><div class="time">18:30 – 21:00</div><div class="what"><strong>Symposium banquet</strong> with a special talk about the "magic" of SE and its community<span class="room">El Puerto</span><div class="detail">Restaurant El Puerto, Lange Brücke 6, 14467 Potsdam<br><a href="https://maps.app.goo.gl/nFgaZaHUe7JGnjX26?g_st=ic" rel="noopener">Open in Google Maps</a></div></div></div>
     </div>
 
     <!-- Day 3 -->
     <div class="day">
       <div class="day-head"><span class="d-num">DAY 3</span><h3>Thursday, July 2</h3></div>
-      <div class="slot kn"><div class="time">09:30 – 11:00</div><div class="what"><strong>Keynotes: Knowledge and skills for SE &amp; AI</strong><span class="room">L-E.03</span><div class="detail">Jin Guo (McGill University) · Christian Rahe (University of Hamburg) · Prem Devanbu (UC Davis)</div></div></div>
-      <div class="slot kn"><div class="time">11:00 – 12:00</div><div class="what"><strong>Education panel: The future of SE&amp;AI education for students and universities</strong><span class="room">L-E.03</span><div class="detail">Martin Robillard (McGill University) · Paola Spoletini (Kennesaw State University) · Rosmarie Debski (HPI student)</div></div></div>
+      <div class="slot kn"><div class="time">09:30 – 11:00</div><div class="what"><strong>Keynotes: Knowledge and skills for SE &amp; AI</strong><span class="room">L-E.03</span><div class="detail">Jin Guo (McGill University)<br>Christian Rahe (University of Hamburg)<br>Prem Devanbu (UC Davis)</div></div></div>
+      <div class="slot kn"><div class="time">11:00 – 12:00</div><div class="what"><strong>Education panel: The future of SE&amp;AI education for students and universities</strong><span class="room">L-E.03</span><div class="detail">Martin Robillard (McGill University)<br>Paola Spoletini (Kennesaw State University)<br>Rosmarie Debski (HPI student)</div></div></div>
       <div class="slot"><div class="time">12:00 – 13:30</div><div class="what"><strong>Lunch, last demos, and farewell</strong></div></div>
       <div class="slot"><div class="time">from 14:00</div><div class="what"><strong>Optional: participants' tour</strong> at the UNESCO World Heritage palaces of Potsdam</div></div>
     </div>
@@ -373,37 +398,77 @@
   <div class="wrap">
     <h2>Venue</h2>
     <div class="prose">
-      <p>The symposium takes place at the Hasso Plattner Institute in Potsdam, <strong>House L (Campus II), ground floor</strong> — across the Lecture Hall L-E.03, the Event Space, and the cantine with terrace.</p>
+      <p>The symposium takes place at the Hasso Plattner Institute in Potsdam. Most sessions are held in <strong>House L (Campus II), ground floor</strong>, across Lecture Hall L-E.03, the Event Space, and the cantine with terrace.</p>
+      <p class="venue-program-note">
+        <strong>Note:</strong> The opening welcome on day one takes place at House O2; please check the <a href="#program">program</a> for the first session location.
+      </p>
     </div>
-    <div class="alert"><strong>Note the construction work on campus.</strong> Access to Haus L is currently only possible via the north side of Campus II. Please follow the path shown below.</div>
+    <div class="alert">
+      <p><strong>Construction work on campus:</strong></p>
+      <p>Access to House L is currently only possible via the north side of Campus II. Please follow the path shown below.</p>
+    </div>
     <figure class="venue-map-img">
-      <img src="assets/campus-map.jpg" alt="Campus map: the entrance to SEAIS is on the north side of HPI Campus II, marked with arrows from Bahnhof Griebnitzsee and from August-Bebel-Straße to Haus L" width="1800" height="894" loading="lazy">
-      <figcaption>Routes to the SEAIS entrance at Haus L — from Bahnhof Griebnitzsee (purple) and via August-Bebel-Straße (blue).</figcaption>
+      <img src="assets/campus-map.jpg" alt="Campus map: the entrance to SEAIS is on the north side of HPI Campus II, marked with arrows from Bahnhof Griebnitzsee and from August-Bebel-Straße to House L" width="1800" height="894" loading="lazy">
+      <figcaption>Routes to the SEAIS entrance at House L — from Bahnhof Griebnitzsee (purple) and via August-Bebel-Straße (blue).</figcaption>
     </figure>
     <div class="map-frame">
-      <iframe title="Map: SEAIS entrance, Haus L, HPI Campus II, Potsdam" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+      <iframe title="Map: SEAIS entrance, House L, HPI Campus II, Potsdam" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
         src="https://maps.google.com/maps?q=52.392667,13.124833&z=17&output=embed"></iframe>
     </div>
     <div class="map-sub">
       <a href="https://maps.app.goo.gl/hTDf3xa5fAqozdo47?g_st=ic" rel="noopener">Open in Google Maps</a>
-      <span>Address: August-Bebel-Str. 88/Haus L, 14482 Potsdam</span>
+      <span>Address: August-Bebel-Str. 88/House L, 14482 Potsdam</span>
     </div>
   </div>
 </section>
 
-<section id="contact">
+
+<section id="accommodation">
   <div class="wrap">
-    <h2>Contact</h2>
+    <h2>Accommodation</h2>
+    <div class="prose">
+      <p>The symposium accommodation is the <strong>Hampton by Hilton Potsdam Babelsberg</strong>, a pleasant 15–20 minute walk from the venue.</p>
+    </div>
+    <div class="addr-card">
+      <span class="addr-label">Address</span>
+      <span class="addr-text">Ahornstraße 6, 14482 Potsdam</span>
+      <a href="https://maps.app.goo.gl/uoq99cMZxGcEp7HP8?g_st=ic" rel="noopener">Open in Google Maps</a>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="alt">
+  <div class="wrap">
+    <h2>Organisers</h2>
     <div class="contact-grid">
       <div class="contact-card">
-        <p class="role">General inquiries</p>
-        <p class="who">Ali Ebrahimi Pourasad</p>
-        <a href="mailto:ali.ebrahimi.pourasad@uni-hamburg.de">ali.ebrahimi.pourasad@uni-hamburg.de</a>
+        <p class="role">Main host</p>
+        <div class="person">
+          <p class="who">Walid Maalej</p>
+          <a href="mailto:walid.maalej@hpi.de">walid.maalej@hpi.de</a>
+        </div>
       </div>
       <div class="contact-card">
-        <p class="role">Slides &amp; posters</p>
-        <p class="who">Mustafa Ghani</p>
-        <a href="mailto:mustafa.ghani@hpi.de">mustafa.ghani@hpi.de</a>
+        <p class="role">Administrative support</p>
+        <div class="person">
+          <p class="who">Anne Klonower</p>
+          <a href="mailto:anne.klonower@hpi.de">anne.klonower@hpi.de</a>
+        </div>
+        <div class="person">
+          <p class="who">Ali Ebrahimi Pourasad</p>
+          <a href="mailto:ali.ebrahimi.pourasad@uni-hamburg.de">ali.ebrahimi.pourasad@uni-hamburg.de</a>
+        </div>
+      </div>
+      <div class="contact-card">
+        <p class="role">Website &amp; posters</p>
+        <div class="person">
+          <p class="who">Alexander Blatzheim</p>
+          <a href="mailto:alexander.blatzheim@hpi.de">alexander.blatzheim@hpi.de</a>
+        </div>
+        <div class="person">
+          <p class="who">Mustafa Ghani</p>
+          <a href="mailto:mustafa.ghani@hpi.de">mustafa.ghani@hpi.de</a>
+        </div>
       </div>
     </div>
   </div>
@@ -416,5 +481,160 @@
   </div>
 </footer>
 
+<script>
+(function () {
+  "use strict";
+  var DEFAULT_AVATAR = "assets/speakers/default-avatar.svg";
+
+  var SPEAKERS = [
+    {
+      name: "Reem Ayad",
+      affiliation: "University of Toronto",
+      profile: "https://www.researchgate.net/profile/Reem-Ayad-2",
+      //profile: "https://srinstitute.utoronto.ca/news/can-we-reverse-engineer-our-social-behaviour-using-ai",
+      image: "assets/speakers/reem-ayad.jpg"
+    },
+    {
+      name: "Dr. Markus Borg",
+      affiliation: "CodeScene & Lund University",
+      profile: "https://mrksbrg.com/",
+      image: "assets/speakers/markus-borg.jpg"
+    },
+    {
+      name: "Prof. Dr. Prem Devanbu",
+      affiliation: "UC Davis",
+      profile: "https://www.cs.ucdavis.edu/~devanbu/",
+      image: "assets/speakers/prem-devanbu.jpg"
+    },
+    {
+      name: "Dr. Rebecca Engelhardt",
+      affiliation: "KPMG",
+      profile: "https://kpmg.com/de/en/contacts/e/rebecca-engelhardt.html",
+      image: "assets/speakers/rebecca-engelhardt.webp"
+    },
+    {
+      name: "Prof. Dr. Jin Guo",
+      affiliation: "McGill University",
+      profile: "https://www.cs.mcgill.ca/~jguo/",
+      image: "assets/speakers/jin-guo.jpg"
+    },
+    {
+      name: "Prof. Dr. Ahmed E. Hassan",
+      affiliation: "Huawei & Queen's University",
+      profile: "https://research.cs.queensu.ca/home/ahmed/home/",
+      image: "assets/speakers/ahmed-hassan.jpg"
+    },
+    {
+      name: "Prof. Dr. Foutse Khomh",
+      affiliation: "Polytechnique Montréal",
+      profile: "https://swat.polymtl.ca/~foutsekh/about/index.html",
+      image: "assets/speakers/foutse-khomh.jpg"
+    },
+    {
+      name: "Prof. Dr. Simone Kühn",
+      affiliation: "Max Planck Institute",
+      profile: "https://www.mpib-berlin.mpg.de/staff/simone-kuehn",
+      image: "assets/speakers/simone-kuehn.jpg"
+    },
+    {
+      name: "Dr. Anastasia Mavridou",
+      affiliation: "NASA",
+      //profile: "http://amavridou.com/",
+      profile: "https://www.researchgate.net/profile/Anastasia-Mavridou",
+      image: "assets/speakers/anastasia-mavridou.jpg"
+    },
+    {
+      name: "Prof. Dr. Bashar Nuseibeh",
+      affiliation: "",
+      profile: "https://nuseibeh.lero.ie/",
+      image: "assets/speakers/bashar-nuseibeh.jpg"
+    },
+    {
+      name: "Christian Rahe",
+      affiliation: "University of Hamburg",
+      profile: "https://www.linkedin.com/in/christian-rahe-0753952a8/",
+      image: "assets/speakers/christian-rahe.jpg"
+    },
+    {
+      name: "Prof. Dr. Martin Robillard",
+      affiliation: "McGill University",
+      profile: "https://www.cs.mcgill.ca/~martin/",
+      image: "assets/speakers/martin-robillard.jpg"
+    },
+    {
+      name: "Prof. Dr. Sergio Segura",
+      affiliation: "Universidad de Sevilla",
+      profile: "https://ssegura.github.io",
+      image: "assets/speakers/sergio-segura.jpg"
+    },
+    {
+      name: "Prof. Dr. Paola Spoletini",
+      affiliation: "Kennesaw State University",
+      profile: "https://ksuweb.kennesaw.edu/~pspoleti/",
+      image: "assets/speakers/paola-spoletini.jpg"
+    },
+    {
+      name: "Prof. Dr. Bogdan Vasilescu",
+      affiliation: "Carnegie Mellon University",
+      profile: "https://bvasiles.github.io/",
+      image: "assets/speakers/bogdan-vasilescu.jpg"
+    },
+    {
+      name: "Prof. Dr. Andreas Vogelsang",
+      affiliation: "University of Duisburg-Essen",
+      profile: "https://sse.uni-due.de/en/about-us/team/andreas-vogelsang",
+      image: "assets/speakers/andreas-vogelsang.jpg"
+    },
+    {
+      name: "Prof. Dr. Tom Zimmermann",
+      affiliation: "UC Irvine",
+      profile: "https://thomas-zimmermann.com/about/",
+      image: "assets/speakers/tom-zimmermann.jpg"
+    }
+  ];
+
+  function buildCard(s) {
+    var a = document.createElement("a");
+    a.className = "speaker";
+    a.href = s.profile;
+    a.target = "_blank";
+    a.rel = "noopener";
+
+    var avatar = document.createElement("span");
+    avatar.className = "avatar";
+
+    var img = document.createElement("img");
+    img.loading = "lazy";
+    img.alt = "";
+    img.src = s.image || DEFAULT_AVATAR;
+    img.onerror = function () {
+      if (img.src.indexOf(DEFAULT_AVATAR) === -1) {
+        img.src = DEFAULT_AVATAR;
+      }
+    };
+    avatar.appendChild(img);
+
+    var meta = document.createElement("span");
+    meta.className = "meta";
+    var name = document.createElement("span");
+    name.className = "name";
+    name.textContent = s.name;
+    meta.appendChild(name);
+    if (s.affiliation) {
+      var aff = document.createElement("span");
+      aff.className = "aff";
+      aff.textContent = s.affiliation;
+      meta.appendChild(aff);
+    }
+
+    a.appendChild(avatar);
+    a.appendChild(meta);
+    return a;
+  }
+
+  var grid = document.getElementById("speaker-grid");
+  SPEAKERS.forEach(function (s) { grid.appendChild(buildCard(s)); });
+})();
+</script>
 </body>
 </html>
