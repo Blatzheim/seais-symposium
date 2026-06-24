@@ -1,0 +1,204 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SE&AI Symposium//Program//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:SE&AI Symposium
+X-WR-TIMEZONE:Europe/Berlin
+BEGIN:VTIMEZONE
+TZID:Europe/Berlin
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+TZNAME:CEST
+DTSTART:19700329T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+TZNAME:CET
+DTSTART:19701025T030000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:seai-d1-arrival@symposium
+DTSTAMP:20260624T120000Z
+DTSTART;TZID=Europe/Berlin:20260630T100000
+DTEND;TZID=Europe/Berlin:20260630T123000
+SUMMARY:Arrival, welcome and networking sessions at the SE&AI chair
+LOCATION:House 02
+END:VEVENT
+BEGIN:VEVENT
+UID:seai-d1-registration@symposium
+DTSTAMP:20260624T120000Z
+DTSTART;TZID=Europe/Berlin:20260630T123000
+DTEND;TZID=Europe/Berlin:20260630T140000
+SUMMARY:Registration and lunch
+LOCATION:Event Space (House L)
+END:VEVENT
+BEGIN:VEVENT
+UID:seai-d1-opening@symposium
+DTSTAMP:20260624T120000Z
+DTSTART;TZID=Europe/Berlin:20260630T140000
+DTEND;TZID=Europe/Berlin:20260630T151000
+SUMMARY:Opening & keynotes: Snapshot from practice (and beyond)
+DESCRIPTION:Rebecca Engelhardt (KPMG)\nMarkus Borg (CodeScene & Lund University)
+LOCATION:L-E.03
+END:VEVENT
+BEGIN:VEVENT
+UID:seai-d1-pechakucha@symposium
+DTSTAMP:20260624T120000Z
+DTSTART;TZID=Europe/Berlin:20260630T151000
+DTEND;TZID=Europe/Berlin:20260630T153000
+SUMMARY:Pecha Kucha statements
+LOCATION:L-E.03
+END:VEVENT
+BEGIN:VEVENT
+UID:seai-d1-posters@symposium
+DTSTAMP:20260624T120000Z
+DTSTART;TZID=Europe/Berlin:20260630T153000
+DTEND;TZID=Europe/Berlin:20260630T161500
+SUMMARY:Posters, demos, and coffee break
+LOCATION:Event Space (House L)
+END:VEVENT
+BEGIN:VEVENT
+UID:seai-d1-keynote-agents@symposium
+DTSTAMP:20260624T120000Z
+DTSTART;TZID=Europe/Berlin:20260630T161500
+DTEND;TZID=Europe/Berlin:20260630T173000
+SUMMARY:Keynotes: Development agents vs. human developers
+DESCRIPTION:Tom Zimmermann (UC Irvine)\nReem Ayad (University of Toronto)
+LOCATION:L-E.03
+END:VEVENT
+BEGIN:VEVENT
+UID:seai-d1-campustour@symposium
+DTSTAMP:20260624T120000Z
+DTSTART;TZID=Europe/Berlin:20260630T173000
+DTEND;TZID=Europe/Berlin:20260630T183000
+SUMMARY:Campus tour
+END:VEVENT
+BEGIN:VEVENT
+UID:seai-d1-reception@symposium
+DTSTAMP:20260624T120000Z
+DTSTART;TZID=Europe/Berlin:20260630T183000
+DTEND;TZID=Europe/Berlin:20260630T210000
+SUMMARY:Symposium reception for reflections
+LOCATION:HPI Terrace
+END:VEVENT
+BEGIN:VEVENT
+UID:seai-d2-keynote-trust@symposium
+DTSTAMP:20260624T120000Z
+DTSTART;TZID=Europe/Berlin:20260701T093000
+DTEND;TZID=Europe/Berlin:20260701T103000
+SUMMARY:Keynotes: Trustworthiness and reliability
+DESCRIPTION:Sergio Segura (Universidad de Sevilla)\nFoutse Khomh (Polytechnique Montreal)
+LOCATION:L-E.03
+END:VEVENT
+BEGIN:VEVENT
+UID:seai-d2-pechakucha@symposium
+DTSTAMP:20260624T120000Z
+DTSTART;TZID=Europe/Berlin:20260701T103000
+DTEND;TZID=Europe/Berlin:20260701T110000
+SUMMARY:Pecha Kucha statements
+LOCATION:L-E.03
+END:VEVENT
+BEGIN:VEVENT
+UID:seai-d2-coffee@symposium
+DTSTAMP:20260624T120000Z
+DTSTART;TZID=Europe/Berlin:20260701T110000
+DTEND;TZID=Europe/Berlin:20260701T113000
+SUMMARY:Posters, demos, and coffee break
+END:VEVENT
+BEGIN:VEVENT
+UID:seai-d2-keynote-req@symposium
+DTSTAMP:20260624T120000Z
+DTSTART;TZID=Europe/Berlin:20260701T113000
+DTEND;TZID=Europe/Berlin:20260701T121500
+SUMMARY:Keynotes: It's all about the requirements
+DESCRIPTION:Anastasia Mavridou (NASA)\nAndreas Vogelsang (University of Duisburg-Essen)
+LOCATION:L-E.03
+END:VEVENT
+BEGIN:VEVENT
+UID:seai-d2-panel@symposium
+DTSTAMP:20260624T120000Z
+DTSTART;TZID=Europe/Berlin:20260701T121500
+DTEND;TZID=Europe/Berlin:20260701T130000
+SUMMARY:Panel: Industry challenges and needs
+DESCRIPTION:Ahmed E. Hassan (Queen's University)\nClara Luders (OPTANO)\nTobias Schimmer (SAP)\nLars Schwabe (LHIND)
+LOCATION:L-E.03
+END:VEVENT
+BEGIN:VEVENT
+UID:seai-d2-lunch@symposium
+DTSTAMP:20260624T120000Z
+DTSTART;TZID=Europe/Berlin:20260701T130000
+DTEND;TZID=Europe/Berlin:20260701T143000
+SUMMARY:Lunch, posters, and group picture
+END:VEVENT
+BEGIN:VEVENT
+UID:seai-d2-keynote-prod@symposium
+DTSTAMP:20260624T120000Z
+DTSTART;TZID=Europe/Berlin:20260701T143000
+DTEND;TZID=Europe/Berlin:20260701T153000
+SUMMARY:Keynotes: Productivity and cognition
+DESCRIPTION:Simone Kuhn (Max-Planck-Institute)\nBogdan Vasilescu (Carnegie Mellon University)
+LOCATION:L-E.03
+END:VEVENT
+BEGIN:VEVENT
+UID:seai-d2-walk@symposium
+DTSTAMP:20260624T120000Z
+DTSTART;TZID=Europe/Berlin:20260701T160000
+DTEND;TZID=Europe/Berlin:20260701T163000
+SUMMARY:Walk to the quay
+END:VEVENT
+BEGIN:VEVENT
+UID:seai-d2-boat@symposium
+DTSTAMP:20260624T120000Z
+DTSTART;TZID=Europe/Berlin:20260701T163000
+DTEND;TZID=Europe/Berlin:20260701T183000
+SUMMARY:Networking on the boat
+DESCRIPTION:Departing 16:30 at Griebnitzsee
+END:VEVENT
+BEGIN:VEVENT
+UID:seai-d2-banquet@symposium
+DTSTAMP:20260624T120000Z
+DTSTART;TZID=Europe/Berlin:20260701T183000
+DTEND;TZID=Europe/Berlin:20260701T210000
+SUMMARY:Symposium banquet with a special talk about the "magic" of SE and its community
+DESCRIPTION:Restaurant El Puerto, Lange Brucke 6, 14467 Potsdam
+LOCATION:El Puerto - Restaurant El Puerto, Lange Brucke 6, 14467 Potsdam
+END:VEVENT
+BEGIN:VEVENT
+UID:seai-d3-keynote-skills@symposium
+DTSTAMP:20260624T120000Z
+DTSTART;TZID=Europe/Berlin:20260702T093000
+DTEND;TZID=Europe/Berlin:20260702T110000
+SUMMARY:Keynotes: Knowledge and skills for SE & AI
+DESCRIPTION:Jin Guo (McGill University)\nChristian Rahe (University of Hamburg)\nPrem Devanbu (UC Davis)
+LOCATION:L-E.03
+END:VEVENT
+BEGIN:VEVENT
+UID:seai-d3-edupanel@symposium
+DTSTAMP:20260624T120000Z
+DTSTART;TZID=Europe/Berlin:20260702T110000
+DTEND;TZID=Europe/Berlin:20260702T120000
+SUMMARY:Education panel: The future of SE&AI education for students and universities
+DESCRIPTION:Martin Robillard (McGill University)\nPaola Spoletini (Kennesaw State University)\nLina Kaschub (DLR)
+LOCATION:L-E.03
+END:VEVENT
+BEGIN:VEVENT
+UID:seai-d3-lunch@symposium
+DTSTAMP:20260624T120000Z
+DTSTART;TZID=Europe/Berlin:20260702T120000
+DTEND;TZID=Europe/Berlin:20260702T133000
+SUMMARY:Lunch, last demos, and farewell
+END:VEVENT
+BEGIN:VEVENT
+UID:seai-d3-tour@symposium
+DTSTAMP:20260624T120000Z
+DTSTART;TZID=Europe/Berlin:20260702T140000
+DTEND;TZID=Europe/Berlin:20260702T160000
+SUMMARY:Optional: participants' tour at the UNESCO World Heritage palaces of Potsdam
+END:VEVENT
+END:VCALENDAR

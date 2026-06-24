@@ -227,6 +227,19 @@
     .slot { grid-template-columns: 1fr; gap: 0.15rem; padding-top: 0.85rem; padding-bottom: 0.85rem; }
     .slot .time { padding-top: 0; }
   }
+  .program-actions { margin-bottom: 0.6rem; }
+  .btn-cal {
+    display: inline-flex; align-items: center; gap: 0.55rem;
+    background: var(--paper); color: var(--ink);
+    border: 1px solid var(--line);
+    padding: 0.55rem 1.05rem; font-weight: 600; font-size: 0.85rem;
+    letter-spacing: 0.01em;
+    transition: border-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
+  }
+  .btn-cal:hover { border-color: var(--red); color: var(--red); text-decoration: none; transform: translateY(-1px); }
+  .btn-cal svg { width: 1.05em; height: 1.05em; stroke: currentColor; flex: none; }
+  @media (prefers-reduced-motion: reduce) { .btn-cal { transition: none; } .btn-cal:hover { transform: none; } }
+  @media print { .program-actions { display: none; } }
 
   /* ---------- Venue ---------- */
   .alert {
@@ -356,6 +369,18 @@
   <div class="wrap">
     <h2>Program</h2>
 
+    <div class="program-actions">
+      <a class="btn-cal" href="assets/se-ai-symposium-program.ics" download>
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true">
+          <rect x="3" y="4.5" width="18" height="16"/>
+          <line x1="3" y1="9" x2="21" y2="9"/>
+          <line x1="8" y1="2.5" x2="8" y2="6.5"/>
+          <line x1="16" y1="2.5" x2="16" y2="6.5"/>
+        </svg>
+        Download for your calendar (.ics)
+      </a>
+    </div>
+
     <!-- Day 1 -->
     <div class="day">
       <div class="day-head"><span class="d-num">DAY 1</span><h3>Tuesday, June 30</h3></div>
@@ -374,7 +399,7 @@
       <div class="day-head"><span class="d-num">DAY 2</span><h3>Wednesday, July 1</h3></div>
       <div class="slot kn"><div class="time">09:30 – 10:30</div><div class="what"><strong>Keynotes: Trustworthiness and reliability</strong><span class="room">L-E.03</span><div class="detail">Sergio Segura (Universidad de Sevilla)<br>Foutse Khomh (Polytechnique Montréal)</div></div></div>
       <div class="slot"><div class="time">10:30 – 11:00</div><div class="what"><strong>Pecha Kucha statements</strong><span class="room">L-E.03</span></div></div>
-      <div class="slot"><div class="time">11:00 – 11:30</div><div class="what"><strong>Coffee break</strong></div></div>
+      <div class="slot"><div class="time">11:00 – 11:30</div><div class="what"><strong>Posters, demos, and coffee break</strong></div></div>
       <div class="slot kn"><div class="time">11:30 – 12:15</div><div class="what"><strong>Keynotes: It's all about the requirements</strong><span class="room">L-E.03</span><div class="detail">Anastasia Mavridou (NASA)<br>Andreas Vogelsang (University of Duisburg-Essen)</div></div></div>
       <div class="slot kn"><div class="time">12:15 – 13:00</div><div class="what"><strong>Panel: Industry challenges and needs</strong><span class="room">L-E.03</span><div class="detail">Ahmed E. Hassan (Queen's University)<br>Clara Lüders (OPTANO)<br>Tobias Schimmer (SAP)<br>Lars Schwabe (LHIND)</div></div></div>
       <div class="slot"><div class="time">13:00 – 14:30</div><div class="what"><strong>Lunch, posters, and group picture</strong></div></div>
